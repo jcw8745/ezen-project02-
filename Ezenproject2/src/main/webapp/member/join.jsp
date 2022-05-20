@@ -97,7 +97,7 @@ margin-right:auto;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="reset" value="취소">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="button" value="돌아가기" onclick="location.href='login.jsp'">
+<input type="button" value="돌아가기" onclick="location.href='login.do'">
 </td>
 </tr>
 
