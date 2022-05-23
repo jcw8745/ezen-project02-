@@ -30,13 +30,13 @@ margin-right:auto;
 <tr>
 <td>이름 </td>
 <td><input type="text" name="name" size="20"
-value="${mVo.name }" readonly></td>
+value="${loginUser.name }" readonly></td>
 </tr>
 
 <tr>
 <td>아이디</td>
 <td>
-<input type="text" name="id" size="20" value="${mVo.id }" readonly></td>
+<input type="text" name="id" size="20" value="${loginUser.id }" readonly></td>
 </tr>
 
 <tr>
@@ -65,7 +65,7 @@ value="${mVo.name }" readonly></td>
 <td>성별</td>
 <td>
 <c:choose>
-<c:when test="${mVo.gender==0 }">
+<c:when test="${loginUser.gender==0 }">
 <input type="radio" name="gender" value="0" checked="checked"> 남자
 <input type="radio" name="gender" value="1">여자
 </c:when>
@@ -89,7 +89,7 @@ value="${mVo.name }" readonly></td>
 <td>등급</td>
 <td>
 <c:choose>
-<c:when test="${mVo.admin==0 }">
+<c:when test="${loginUser.admin==0 }">
 <input type="radio" name="admin" value="0" checked="checked">일반회원
 <input type="radio" name="admin" value="1">관리자
 </c:when>

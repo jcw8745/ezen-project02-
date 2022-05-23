@@ -32,18 +32,18 @@ margin-right:auto;
 <tr>
 <td>이름 </td>
 <td><input type="text" name="name" size="20"
-value="${mVo.name }" ></td>
+value="${loginUser.name }" readonly></td>
 </tr>
 
 <tr>
 <td>아이디</td>
 <td>
-<input type="text" name="id" size="20" value="${mVo.id }" ></td>
+<input type="text" name="id" size="20" value="${loginUser.id }" readonly></td>
 </tr>
 
 <tr>
 <td>암&nbsp;호 </td>
-<td> <input type="password" name="pwd" size="20" >*</td>
+<td> <input type="password" name="pwd" size="20" value="${loginUser.pwd }" readonly>*</td>
 </tr>
 <tr height="30">
 <td width="80">암호 확인</td>

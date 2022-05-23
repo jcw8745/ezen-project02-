@@ -1,6 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.io.PrintWriter" %>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    
+<%--     <c:if test="${empty loginUser }">
+
+    
+    <jsp:forward page='login.do'/>
+        </c:if>
+ --%>
 
 <!DOCTYPE html>
 <html>
@@ -12,13 +20,25 @@
 <title>서울특별시 공공서비스</title>
 </head>
 <body>
-	<%
-		String userID = null;
-		if (session.getAttribute("userID") != null) {
-			userID = (String) session.getAttribute("userID");
+<c:if test="${loginUser!=null }">
+<h3 align="right"><span style="background-color:#dddddd;">
+
+안녕하세요. ${loginUser.name }(${loginUser.id })님 &nbsp;&nbsp;
+
+<c:choose>
+<c:when test="${loginUser.admin==1 }">[관리자]</c:when>
+<c:otherwise> [일반회원] </c:otherwise>
+</c:choose>
+
+</span></h3>
+</c:if>
+<%-- 	<%
+		String loginUser = null;
+		if (session.getAttribute("loginUser") != null) {
+			loginUser = (String) session.getAttribute("loginUser");
 		}
-	
-	%>
+	%> --%>
+
 	<nav class="navbar  navbar-expand-sm  bg-blue navbar-light">
 		<div class="navbar-header">
 			  <button type="button" class="navbar-toggle collapsed"
@@ -45,9 +65,10 @@
 				<li><a href="ezenproject.jsp">게시판</a></li>
 			
 			</ul>
-			<%
-				if(userID == null) {
-			%>
+			<c:if test="${loginUser==null }">
+		<%-- 	<%
+				if(loginUser == null) {
+			%> --%>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown">
 					<a href="#" class="dropdown-toffle"
@@ -59,23 +80,28 @@
 			</ul>
 				</li>
 			</ul>
-			<%
+			</c:if>
+			<c:if test="${loginUser!=null }">
+			
+	<%-- 		<%
 				} else {
-			%>
+			%> --%>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown">
 					<a href="#" class="dropdown-toffle"
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanede="false">회원관리<span class="caret"></span></a>
 			<ul class="dropdown-menu">
-				<li><a href="logoutAction.jsp">로그아웃</a></li>
+				<li><a href="logout.do">로그아웃</a></li>
+				<li><a href="memberUpdate.do">회원정보수정</a></li>
 			</ul>
 				</li>
 			</ul>
-			
+			</c:if>
+<%-- 			
 			<%	
 				}
-			%>
+			%> --%>
 		</div>
 		
 	</nav>

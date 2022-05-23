@@ -25,7 +25,7 @@ margin-right:auto;
 <body>
 
 <h2>회원 가입</h2>
-<h4>'*' 표시 항목은 필수 입력 항목입니다.</h4>
+
 <form action="join.do" method="post" name="frm">
 <table>
 
