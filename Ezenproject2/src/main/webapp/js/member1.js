@@ -73,12 +73,12 @@ function joinCheck(){
 	}
 	
 	if(document.frm.pwd.value==""){
-		alert("암호는 반드시 입력해야 합니다.");
+		alert("비밀번호는 반드시 입력해야 합니다.");
 		frm.pwd.focus();
 		return false;
 	}
 	if(document.frm.pwd.value !=document.frm.pwd_check.value){
-		alert("암호가 일치하지 않습니다.");
+		alert("비밀번호가 일치하지 않습니다.");
 		frm.pwd.focus();
 		return false;
 	}
