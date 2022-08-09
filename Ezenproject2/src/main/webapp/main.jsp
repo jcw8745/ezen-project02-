@@ -62,7 +62,7 @@
 				<li><a href="main.jsp">교육강좌</a></li>
 				<li><a href="main.jsp">진료복지</a></li>
 				<li><a href="main.jsp">이용안내</a></li>
-				<li><a href="ezenproject.jsp">게시판</a></li>
+				<li><a href="BoardServlet?command=board_list">게시판</a></li>
 			
 			</ul>
 			<c:if test="${loginUser==null }">

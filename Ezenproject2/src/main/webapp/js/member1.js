@@ -116,7 +116,7 @@ function joinCheck(){
 	
 	if(confirm("정말 탈퇴 하시겠습니까?")==true){
 		alert("회원탈퇴 되었습니다.");
-	}else{ // 취소버튼클릭시 돌아가기 (오류)
+	}else{ 
 		return false;
 	}
 	
